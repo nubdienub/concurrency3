@@ -12,7 +12,7 @@ public class Rai {
 		achtereenGekochteAutos = 0;
 		
 		while(true){
-			raiSemaphore.acquire();
+			//raiSemaphore.acquire();
 			
 			
 		}
@@ -43,12 +43,21 @@ public class Rai {
 	}
 
 	/**
-	 * 
+	 * Verhoogt het aantal gekochte auto's 
 	 * @param achtereenGekochteAutos
 	 */
 	public void raiseAchtereenGekochteAutos() {
 		this.achtereenGekochteAutos += 1;
 	}
+
+	/**
+	 * Haalt het semaphore van de RAI op
+	 * @return
+	 */
+	public Semaphore getRaiSemaphore() {
+		return raiSemaphore;
+	}
+
 
 
 }

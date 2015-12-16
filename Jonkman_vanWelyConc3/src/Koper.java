@@ -1,29 +1,14 @@
 
-public class Koper extends Thread{
-	private int koperId;
-	private Rai rai;
-	
-	public Koper() {
-		// TODO Auto-generated constructor stub
+public class Koper extends Persoon{
+
+	public Koper(int id, Rai rai) {
+		super(id, rai);
 	}
-	
+
 	@Override
 	public void run() {
-		try {
-			while(true){
-			//dingen
-			}
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	public void aanmelden(){
-		rai.getFloor().joinAsVisitor(this);
-	}
-	
-	public int getKijkerId(){
-		return this.koperId;
-	}
+		//Gebruiker meld zich aan 
+		aanmelden();
+	}	
 
 }

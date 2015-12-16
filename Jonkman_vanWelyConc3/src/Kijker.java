@@ -1,31 +1,14 @@
-public class Kijker extends Thread {
-	private int kijkerId;
-	private Rai rai;
+public class Kijker extends Persoon {
 
-	public Kijker(int id, Rai rai){
-		this.kijkerId = id;
-		this.rai = rai;
+	public Kijker(int id, Rai rai) {
+		super(id, rai);
 	}
-	
+
 	@Override
 	public void run() {
+		//Gebruiker meld zich aan
+		aanmelden();
+	}
 
-	}
-	
-	/**
-	 * Aanmelden bij auto RAI
-	 */
-	public void aanmelden(){
-		
-	}
-	
-	/**
-	 * Geeft het id van de kijker terug
-	 * @return
-	 */
-	public int getKijkerId(){
-		return this.kijkerId;
-	}
-	
 	
 }
