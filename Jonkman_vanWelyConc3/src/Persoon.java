@@ -13,8 +13,14 @@ public abstract class Persoon extends Thread{
 	
 	/**
 	 * Aanmelden bij auto RAI
+	 * @throws InterruptedException 
 	 */
 	public void aanmelden(){
+		try {
+			Thread.sleep((int)(Math.random() * 25000));
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		rai.getRaiSemaphore().release();
 	}
 	
@@ -25,4 +31,33 @@ public abstract class Persoon extends Thread{
 	public int getPersoonId(){
 		return this.persoonId;
 	}
+	
+	/**
+	 * Geeft het object van de RAI terug
+	 * @return
+	 */
+	public Rai getRai(){
+		return this.rai;
+	}
+	
+	/**
+	 * Betreden van de RAI
+	 */
+	public void betreedRAI(){
+		rai.verlaagtVrijePlaatsen();
+	}
+	
+	/**
+	 * Verlaten van de RAI
+	 */
+	public void verlaatRAI(){
+		try {
+			Thread.sleep((int)(Math.random() * 25000));
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		rai.verhoogVrijePlaatsen();
+	}
+	
+	
 }

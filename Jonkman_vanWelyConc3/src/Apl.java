@@ -2,7 +2,7 @@
 public class Apl {
 
 	public static void main(String[] args) throws InterruptedException {
-		Rai rai = new Rai();
+		Rai rai = new Rai(5,5);
 	}
 
 }
